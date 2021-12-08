@@ -1,8 +1,8 @@
 "use strict";
 const getOutcomes = {
-    paper: "Rock",
-    rock: "Scissors",
-    scissors: "Paper",
+    paper: "rock",
+    rock: "scissors",
+    scissors: "paper",
 };
 const windowObject = window;
 const gameResults = document.querySelector(".game-result");

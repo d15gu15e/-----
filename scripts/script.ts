@@ -1,7 +1,7 @@
 const getOutcomes: any = {
-  paper: "Rock",
-  rock: "Scissors",
-  scissors: "Paper",
+  paper: "rock",
+  rock: "scissors",
+  scissors: "paper",
 };
 
 const windowObject = window as any;
