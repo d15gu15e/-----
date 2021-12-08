@@ -13,26 +13,26 @@ const computerResult = document.querySelector(".computer-result");
 const playAgain = document.querySelector(".play-again");
 let outcome = "";
 
+const playWin = () => {
+  const soundeffect = new Audio("./sound-effects/confetti-pop.wav");
+  soundeffect.play();
+  // You won!! Confetti time
+  windowObject.confetti({
+    particleCount: 100,
+    startVelocity: 60,
+    gravity: 0.2,
+    spread: 360,
+    origin: {
+      y: 0.8,
+    },
+  });
+};
+
 const outcomeResult = function (outcome: string, computerChoice: string) {
   gameResults?.classList.add("show");
   resultText!.textContent = `You ${outcome}!`;
   computerResult!.textContent = `Computer chose: ${computerChoice}`;
-  gameResults?.addEventListener("animationend", () => {
-    if (outcome === "Win") {
-      const soundeffect = new Audio("./sound-effects/confetti-pop.wav");
-      soundeffect.play();
-      // You won!! Confetti time
-      var confetti = windowObject.confetti({
-        particleCount: 100,
-        startVelocity: 60,
-        gravity: 0.2,
-        spread: 360,
-        origin: {
-          y: 0.8,
-        },
-      });
-    }
-  });
+  if (outcome === "Win") playWin();
   console.log(outcome, computerChoice);
 };
 
@@ -51,6 +51,7 @@ for (let i = 0; i < buttonElements.length; i++) {
       Math.floor(Math.random() * 3)
     ];
 
+    let outcome = "";
     if (computerChoice === playerchoice) {
       outcome = "Draw";
     } else {
@@ -65,5 +66,4 @@ playAgain?.addEventListener("click", () => {
   playingField?.classList.toggle("disabled");
   gameResults?.classList.remove("show");
   gameResults?.classList.add("hide");
-  outcome = "";
 });

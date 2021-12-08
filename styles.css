@@ -72,13 +72,13 @@ body {
 
 .show {
   animation-name: show;
-  animation-duration: 1s;
+  animation-duration: 0.75s;
   animation-fill-mode: forwards;
 }
 
 .hide {
   animation-name: hide;
-  animation-duration: 1s;
+  animation-duration: 0.75s;
   animation-fill-mode: forwards;
 }
 

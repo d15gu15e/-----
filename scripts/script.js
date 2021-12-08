@@ -12,26 +12,26 @@ const resultText = document.querySelector(".result-text");
 const computerResult = document.querySelector(".computer-result");
 const playAgain = document.querySelector(".play-again");
 let outcome = "";
+const playWin = () => {
+    const soundeffect = new Audio("./sound-effects/confetti-pop.wav");
+    soundeffect.play();
+    // You won!! Confetti time
+    windowObject.confetti({
+        particleCount: 100,
+        startVelocity: 60,
+        gravity: 0.2,
+        spread: 360,
+        origin: {
+            y: 0.8,
+        },
+    });
+};
 const outcomeResult = function (outcome, computerChoice) {
     gameResults?.classList.add("show");
     resultText.textContent = `You ${outcome}!`;
     computerResult.textContent = `Computer chose: ${computerChoice}`;
-    gameResults?.addEventListener("animationend", () => {
-        if (outcome === "Win") {
-            const soundeffect = new Audio("./sound-effects/confetti-pop.wav");
-            soundeffect.play();
-            // You won!! Confetti time
-            var confetti = windowObject.confetti({
-                particleCount: 100,
-                startVelocity: 60,
-                gravity: 0.2,
-                spread: 360,
-                origin: {
-                    y: 0.8,
-                },
-            });
-        }
-    });
+    if (outcome === "Win")
+        playWin();
     console.log(outcome, computerChoice);
 };
 // Get buttons, add onclick event
@@ -46,6 +46,7 @@ for (let i = 0; i < buttonElements.length; i++) {
         const playerchoice = buttonElements[i].id;
         // Get computers decision
         const computerChoice = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
+        let outcome = "";
         if (computerChoice === playerchoice) {
             outcome = "Draw";
         }
@@ -60,5 +61,4 @@ playAgain?.addEventListener("click", () => {
     playingField?.classList.toggle("disabled");
     gameResults?.classList.remove("show");
     gameResults?.classList.add("hide");
-    outcome = "";
 });
