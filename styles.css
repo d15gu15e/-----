@@ -115,6 +115,10 @@ body {
   transform: translateY(4px);
 }
 
+.linkedin {
+  margin-top: 15px;
+}
+
 @keyframes show {
   from {
     top: -100%;
