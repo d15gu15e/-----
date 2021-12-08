@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fef9ef;
+}
+
+.playing-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.playing-field .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  min-width: 200px;
+  min-height: 200px;
+
+  font-size: 75px;
+  border-radius: 100%;
+  color: white;
+  margin: 50px;
+
+  box-shadow: 5px 8px #999;
+}
+
+.disabled * {
+  z-index: -1;
+}
+
+#rock {
+  background-color: #50cae9;
+}
+
+#paper {
+  background-color: #ffcb77;
+}
+
+#scissors {
+  background-color: #fe6d73;
+}
+
+.btn:hover {
+  filter: brightness(95%);
+  cursor: pointer;
+  transform: translateY(4px);
+}
+
+.game-result {
+  position: absolute;
+  background-color: #d9ed92;
+  height: 100vh;
+  width: 100vw;
+  top: -100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.show {
+  animation-name: show;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.hide {
+  animation-name: hide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.game-result {
+  color: #1e6091;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.result-text {
+  font-size: 75px;
+
+  text-decoration: underline;
+}
+
+.computer-result {
+  font-size: 20px;
+  margin: 10px 0 50px 0;
+}
+
+.play-again {
+  padding: 20px 30px;
+  font-family: "Readex Pro", sans-serif;
+
+  color: white;
+  font-size: 18px;
+  border: none;
+  background-color: #168aad;
+  box-shadow: 3px 6px #1e6091;
+}
+
+.play-again:hover {
+  filter: brightness(95%);
+  cursor: pointer;
+  transform: translateY(4px);
+}
+
+@keyframes show {
+  from {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes hide {
+  from {
+    top: 0%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+/* Break width */
+@media only screen and (max-width: 1020px) {
+  .playing-field {
+    flex-direction: column;
+  }
+
+  .btn {
+    min-width: 150px;
+    min-height: 150px;
+    margin: 20px;
+  }
+}

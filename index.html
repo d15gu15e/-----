@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper Scissors!</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome icons-->
+    <script src="https://kit.fontawesome.com/701be32175.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="game-result">
+        <p class="result-text"></p>
+        <p class="computer-result"></p>
+        <button class="play-again">Play Again!</button>
+    </section>
+    <main class="playing-field">
+        <section id="rock" class="btn">
+            <i class="far fa-hand-rock"></i>
+        </section>
+        <section id="paper" class="btn">
+            <i class="far fa-hand-paper"></i>
+        </section>
+        <section id="scissors" class="btn">
+            <i class="far fa-hand-scissors"></i>
+        </section>
+    </main>
+
+    <audio class="sound-win">
+        <source src="sound-effects/confetti-pop.wav" type="audio/ogg">
+    </audio>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script type="text/javascript" type="module" src="scripts/script.js"></script>
+</body>
+
+</html>
