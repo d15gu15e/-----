@@ -3,7 +3,7 @@
 🌐Responsive, great looking and overall simple Rock, Paper, Scissors game.
 
 ------------------------------------------------
-➡️https://d15gu15e.github.io/rock-paper-scissors/
+➡️https://eben-vranken.github.io/rock-paper-scissors/
 
 Used library: https://github.com/catdad/canvas-confetti (for confetti, duh)
 
